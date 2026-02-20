@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Editor from '@excalidraw/excalidraw'
+import { Excalidraw } from '@excalidraw/excalidraw'
 import ChatPanel from './components/ChatPanel'
 
 function App() {
@@ -20,10 +20,12 @@ function App() {
         <ChatPanel onChartGenerated={handleChartGenerated} />
         <div className="editor-panel">
           {excalidrawData ? (
-            <Editor
-              initialData={excalidrawData}
-              onChange={(elements) => console.log('Editor changed:', elements)}
-            />
+            <div style={{ width: '100%', height: '100%' }}>
+              <Excalidraw
+                initialData={excalidrawData}
+                onChange={(elements) => console.log('Editor changed:', elements)}
+              />
+            </div>
           ) : (
             <div className="editor-placeholder">
               <h2>📊 等待生成图表...</h2>
