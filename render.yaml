@@ -1,0 +1,16 @@
+{
+  "version": "1",
+  "name": "ai-chart-service",
+  "env": {
+    "NODE_VERSION": "18"
+  },
+  "build": {
+    "commands": [
+      "cd server && npm install --production"
+    ]
+  },
+  "deploy": {
+    "startCommand": "node server/src/index.js",
+    "healthcheckPath": "/health"
+  }
+}

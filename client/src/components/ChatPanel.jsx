@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './ChatPanel.css'
 
-const API_URL = 'http://localhost:3001'
+const API_URL = import.meta.env.VITE_API_URL || 'https://ai-chart-service.onrender.com'
 
 function ChatPanel({ onChartGenerated }) {
   const [messages, setMessages] = useState([
